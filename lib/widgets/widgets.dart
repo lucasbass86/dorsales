@@ -1,5 +1,5 @@
-export 'package:dorsales/widgets/dorsal_info_widget.dart';
-
+export 'package:dorsales/widgets/basic_container_widget.dart';
+export 'package:dorsales/widgets/bibnumber_widget.dart';
 export 'package:dorsales/widgets/distance_widget.dart';
 export 'package:dorsales/widgets/dorsal_widget.dart';
 export 'package:dorsales/widgets/list_distances_widget.dart';

@@ -30,7 +30,8 @@ class _NoConnectionPageState extends State<NoConnectionPage> {
               padding: const EdgeInsets.only(top: 30, right: 30),
               child: GestureDetector(
                 onTap: () => SystemChannels.platform.invokeMethod('SystemNavigator.pop'),
-                child: Text('Salir', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[600])),
+                child: Text('Salir',
+                    style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[600])),
               ),
             ),
           ),
@@ -41,7 +42,8 @@ class _NoConnectionPageState extends State<NoConnectionPage> {
             child: Center(
               child: Text(
                 'No hay conexión',
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: Colors.grey[600]),
+                style:
+                    TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: Colors.grey[600]),
                 textAlign: TextAlign.center,
               ),
             ),

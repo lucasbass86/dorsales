@@ -104,9 +104,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: HomePage.routeName,
+      // initialRoute: HomePage.routeName,
+      initialRoute: MainPage.routeName,
       routes: routes,
-      theme: getTheme(),
+      theme: getTheme2(),
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
@@ -128,7 +129,7 @@ class UpdateApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: UpdatePage.routeName,
       routes: routes,
-      theme: getTheme(),
+      theme: getTheme2(),
     );
   }
 }
@@ -142,7 +143,7 @@ class MyAppNoConnection extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: NoConnectionPage.routeName,
       routes: routes,
-      theme: getTheme(),
+      theme: getTheme2(),
     );
   }
 }
@@ -154,7 +155,7 @@ class MyAppLoading extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: getTheme(),
+      theme: getTheme2(),
       home: Scaffold(
         body: Center(
           child: Column(

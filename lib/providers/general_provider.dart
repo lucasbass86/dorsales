@@ -31,4 +31,18 @@ class GeneralProvider extends ChangeNotifier {
     Preferences.orderAsc = value;
     notifyListeners();
   }
+
+  bool _lockNewBibNumber = false;
+  bool get lockNewBibNumber => _lockNewBibNumber;
+  set lockNewBibNumber(bool value) {
+    _lockNewBibNumber = value;
+    notifyListeners();
+  }
+
+  int _homeIndex = 0;
+  int get homeIndex => _homeIndex;
+  set homeIndex(int index) {
+    _homeIndex = index;
+    notifyListeners();
+  }
 }

@@ -1,7 +1,9 @@
+export 'package:dorsales/pages/graphics/graphic_detalil_page.dart';
+export 'package:dorsales/pages/bibnumber/bibnumber_edit_page.dart';
+export 'package:dorsales/pages/bibnumber/bibnumber_detail_page.dart';
+export 'package:dorsales/pages/statistics/statistics_page.dart';
+export 'package:dorsales/pages/bibnumber/new_bibnumber.dart';
+export 'package:dorsales/pages/home/home_page.dart';
+export 'package:dorsales/pages/home/main_page.dart';
 export 'package:dorsales/pages/update_page.dart';
-
 export 'package:dorsales/pages/no_connection_page.dart';
-
-export 'package:dorsales/pages/home_page.dart';
-export 'package:dorsales/pages/newdorsal_page.dart';
-export 'package:dorsales/pages/dorsal_page.dart';

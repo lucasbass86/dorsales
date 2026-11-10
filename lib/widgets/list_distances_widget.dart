@@ -8,15 +8,13 @@ class ListDistancesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 100,
+      height: 70,
       width: double.infinity,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(),
         itemCount: Utils.distances.length,
-        itemBuilder: (context, index) {
-          return DistanceWidget(distance: Utils.distances[index]);
-        },
+        itemBuilder: (context, index) => DistanceWidget(distance: Utils.distances[index]),
       ),
     );
   }

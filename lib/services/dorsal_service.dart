@@ -7,6 +7,7 @@ import 'package:dorsales/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
+import 'package:remove_diacritic/remove_diacritic.dart';
 
 class DorsalService extends ChangeNotifier {
   final _baseUrl = Secret.firebaseUrl;
@@ -15,7 +16,9 @@ class DorsalService extends ChangeNotifier {
   List<Dorsal> dorsales = [];
   List<Dorsal> filter = [];
 
-  DorsalService() {}
+  DorsalService() {
+    loadDorsales();
+  }
 
   Future<List<Dorsal>> loadDorsales() async {
     final url = Uri.https(_baseUrl, 'carreras.json');
@@ -163,7 +166,8 @@ class DorsalService extends ChangeNotifier {
     }
     if (Preferences.filterBusqueda.isNotEmpty) {
       filter = filter
-          .where((d) => d.carrera.toUpperCase().contains(Preferences.filterBusqueda))
+          .where(
+              (d) => removeDiacritics(d.carrera.toUpperCase()).contains(Preferences.filterBusqueda))
           .toList();
     }
     orderDorsales();
@@ -281,5 +285,9 @@ class DorsalService extends ChangeNotifier {
         }
         break;
     }
+  }
+
+  void reload() {
+    notifyListeners();
   }
 }

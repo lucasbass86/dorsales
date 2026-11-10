@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:dorsales/models/dorsal_model.dart';
 import 'package:dorsales/utils/utils.dart';
-import 'package:dorsales/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class DorsalWidget extends StatelessWidget {
@@ -12,15 +11,6 @@ class DorsalWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     const double pointLocation = 7;
     return GestureDetector(
-      onTap: () {
-        showModalBottomSheet(
-          backgroundColor: Colors.transparent,
-          context: context,
-          builder: (context) {
-            return DorsalInfoWidget(dorsal: dorsal, bottomContext: context);
-          },
-        );
-      },
       child: ZoomIn(
         child: Container(
           width: 175,
@@ -29,13 +19,6 @@ class DorsalWidget extends StatelessWidget {
           decoration: BoxDecoration(
             color: Utils.blue,
             borderRadius: BorderRadius.circular(15),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.white.withOpacity(0.5),
-                offset: const Offset(5, 5),
-                blurRadius: Utils.blurRadius,
-              ),
-            ],
           ),
           child: Stack(
             children: [
@@ -44,18 +27,20 @@ class DorsalWidget extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 5),
                     height: 35,
-                    child: Center(
-                      child: FittedBox(fit: BoxFit.fitWidth, child: Text(dorsal.carrera)),
-                    ),
+                    // child: Center(
+                    //   child: FittedBox(fit: BoxFit.fitWidth, child: Text(dorsal.carrera)),
+                    // ),
                   ),
                   Expanded(
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.9),
-                        borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(15), bottomRight: Radius.circular(15)),
+                        color: Colors.white.withAlpha(200),
+                        borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(15), bottomRight: Radius.circular(15)),
                       ),
                       child: Center(
-                        child: Text(dorsal.numero.toString(), style: TextStyle(fontSize: 50, color: Colors.black.withOpacity(0.75))),
+                        child: Text(dorsal.numero.toString(),
+                            style: TextStyle(fontSize: 50, color: Colors.black)),
                       ),
                     ),
                   ),
